@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современный видео плеер</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="player-container">
+        <!-- Основной контейнер видео плеера -->
+        <div class="video-player" id="videoPlayer">
+            <!-- Видео элемент -->
+            <video id="video" poster="assets/poster.jpg">
+                <!-- Используем локальную заглушку вместо внешнего URL -->
+                <source src="https://cloud.kodik-storage.com/useruploads/c4db4cfd-26a0-48db-91f5-310d4006b533/f03ccb8712906ca55170cb22b9468311:2025060612/720.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+
+            <!-- Верхняя панель управления -->
+            <div class="control-panel top-panel">
+                <div class="translation-selector">
+                    <div class="translation-button">
+                        <i class="fas fa-language"></i>
+                        <span>Перевод</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="translation-dropdown">
+                        <div class="translation-option active">Оригинал</div>
+                        <div class="translation-option">Дубляж</div>
+                        <div class="translation-option">Профессиональный</div>
+                        <div class="translation-option">Любительский</div>
+                    </div>
+                </div>
+                
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+
+            <!-- Центральная кнопка воспроизведения (большая) -->
+            <div class="big-play-button">
+                <i class="fas fa-play"></i>
+            </div>
+
+            <!-- Кнопки навигации по эпизодам (предыдущий/следующий) -->
+            <div class="episode-navigation">
+                <div class="prev-episode">
+                    <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="next-episode">
+                    <i class="fas fa-step-forward"></i>
+                </div>
+            </div>
+
+            <!-- Нижняя панель управления -->
+            <div class="control-panel bottom-panel">
+                <!-- Прогресс-бар -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-filled"></div>
+                    </div>
+                    <div class="progress-hover-time">00:00</div>
+                </div>
+                
+                <div class="controls-row">
+                    <!-- Левая группа кнопок -->
+                    <div class="controls-left">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="time-display">
+                            <span class="current-time">00:00</span>
+                            <span class="time-separator">/</span>
+                            <span class="total-time">00:00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Центральная группа кнопок -->
+                    <div class="controls-center">
+                        <div class="episodes-button">
+                            <i class="fas fa-list"></i>
+                            <span>Серии</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Правая группа кнопок -->
+                    <div class="controls-right">
+                        <div class="skip-intro-button">
+                            <span>Пропустить заставку</span>
+                        </div>
+                        <div class="fullscreen-button">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Панель выбора серий -->
+            <div class="episodes-panel">
+                <div class="episodes-header">
+                    <h3>Выбор серии</h3>
+                    <div class="close-episodes">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                
+                <div class="episodes-container">
+                    <!-- Здесь будут карточки серий, генерируемые через JavaScript -->
+                </div>
+                
+                <div class="seasons-selector">
+                    <div class="season-button active" data-season="1">Сезон 1</div>
+                    <div class="season-button" data-season="2">Сезон 2</div>
+                    <div class="season-button" data-season="3">Сезон 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
